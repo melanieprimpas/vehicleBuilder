@@ -54,6 +54,8 @@ class Truck extends Vehicle implements AbleToTow {
     }}
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
+    //console.log(this.towingCapacity, "Line 57")
+    //console.log(vehicle.weight, "Line 58")
     // TODO: Get the make an model of the vehicle if it exists
     if (vehicle.make && vehicle.model) {
       this.make = vehicle.make;
