@@ -269,6 +269,22 @@ class Cli {
       ])
       .then((answers) => {
         // TODO: Use the answers object to pass the required properties to the Motorbike constructor
+       const frontWheel = new Wheel();
+       frontWheel.setDiameter = parseInt(answers.frontWheelDiameter);
+       frontWheel.setTireBrand = answers.frontWheelBrand;
+
+       //const updatedFrontDiameter = frontWheel.getDiameter;
+       //const updatedFrontTireBrand = frontWheel.getTireBrand;
+  
+       const rearWheel = new Wheel();
+       rearWheel.setDiameter = parseInt(answers.rearWheelDiameter);
+       rearWheel.setTireBrand = answers.rearWheelBrand;
+  
+       //const updatedRearDiameter = rearWheel.getDiameter;
+       //const updatedRearTireBrand = rearWheel.getTireBrand;
+       //console.log(updatedFrontDiameter);
+       //console.log(updatedRearDiameter);
+
         const motorbike = new Motorbike(
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
           Cli.generateVin(),
@@ -278,7 +294,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          []
+          [frontWheel,rearWheel]
         );
         // TODO: push the motorbike to the vehicles array
           this.vehicles.push(motorbike);
